@@ -15,7 +15,7 @@ MODEL = joblib.load('model\sentiment-analysis.joblib')
 @app.route('/api/analyze_sentiment', methods=['POST'])
 def analyze_sentiment():
     """
-    API endpoint to receive texts and return dummy sentiment analysis.
+    API endpoint to receive texts and return sentiment analysis.
     Expects a JSON payload with a "texts" key, which is a list of strings.
     e.g., {"texts": ["I love this!", "This is not good."]}
     """
@@ -34,7 +34,6 @@ def analyze_sentiment():
         for text in input_texts:
             if not isinstance(text, str):
                 # Skip non-string items, or handle as an error
-                # For this dummy API, we'll just assign a neutral sentiment
                 results.append({
                     "text": str(text), # Ensure it's a string for the response
                     "sentimentScore": 0.0,

@@ -174,6 +174,7 @@ const App = () => {
                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           item.sentimentLabel === 'POSITIVE' ? 'bg-green-600/70 text-green-100' :
                           item.sentimentLabel === 'NEGATIVE' ? 'bg-red-600/70 text-red-100' :
+                          item.sentimentLabel === 'NEUTRAL' ? 'bg-yellow-600/70 text-yellow-100' :
                           'bg-yellow-600/70 text-yellow-100'
                         }`}>
                           {item.sentimentLabel || 'Neutral'}
